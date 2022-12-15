@@ -19,8 +19,10 @@ server.use("/product", productRouter)
 server.use("/bookmark", bookMarkRouter)
 server.post("/", async (req, res) => {
     const user = req.body
-    console.log(user)
+    // console.log(user)
+
     const data = await User.create(user)
+
     res.status(200).send({ message: "data added successfully", data: data })
 })
 server.listen(PORT, async () => {
